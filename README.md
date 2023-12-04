@@ -66,7 +66,6 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  cd my-folder
   git clone git@github.com:George7h/OOP-School-Library.git
 ```
 
