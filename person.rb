@@ -36,8 +36,8 @@ class TrimmerDecorator < NameableDecorator
 end
 
 class Person < Nameable
-  attr_accessor :name, :age
-  attr_reader :id
+  attr_accessor :name, :age, :parent_permission
+  attr_reader :id, :rentals, :classroom
 
   def initialize(id, name = 'Unknown', age: nil, parent_permission: true)
     super()
@@ -45,6 +45,8 @@ class Person < Nameable
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
+    @classroom = nil
   end
 
   def can_use_services?
@@ -53,6 +55,10 @@ class Person < Nameable
 
   def correct_name
     @name
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, book, self)
   end
 
   private
