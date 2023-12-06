@@ -57,13 +57,10 @@ class Person < Nameable
     @name
   end
 
-  def add_rental(rental)
-    @rentals << rental
+  def add_rental(date, book)
+    Rental.new(date, book, self)
   end
 
-  def add_rentals(rentals)
-    @rentals.concat(rentals)
-  end
 
   private
 
