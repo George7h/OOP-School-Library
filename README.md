@@ -84,75 +84,7 @@ To run the project, execute the following command in your terminal:
 
 
 ```sh
-  irb
-```
-
-```sh
-require "./person" # Output shoulde be: true
-require "./classroom" # Output shoulde be: true
-require "./student" # Output shoulde be: true
-require "./book" # Output shoulde be: true
-require "./rental" # Output shoulde be: true
-require "./teacher" # Output shoulde be: true
-
-```
-
-```sh
-# Create a person
-person_1 = Person.new(1, 'Peter', age: 22)
-puts person_1.id  # Output: 1
-puts person_1.name  # Output: Peter
-puts person_1.age  # Output: 22
-puts person_1.can_use_services?  # Output: true
-
-person_2 = Person.new(1, 'Peter', age: 22)
-puts person_2.id  # Output: 1
-puts person_2.name  # Output: Peter
-puts person_2.age  # Output: 22
-puts person_2.can_use_services?  # Output: true
-
-# Create classroom
-room101 = Classroom.new('Mathematics')
-
-# Create a student
-student_1 = Student.new(2, room101, 'Lex', age: 15)
-puts student_1.id  # Output: 2
-puts student_1.name  # Output: Lex
-puts student_1.age  # Output: 15
-puts student_1.classroom.inspect  # Output: Mathematics
-puts student_1.can_use_services?  # Output: true
-puts student_1.play_hooky  # Output: ¯\(ツ)/¯
-
-student_2 = Student.new(4, room101, 'Alex', age: 16)
-puts student.id  # Output: 2
-puts student.name  # Output: Lex
-puts student.age  # Output: 15
-puts student.classroom  # Output: Science
-puts student.can_use_services?  # Output: true
-puts student.play_hooky  # Output: ¯\(ツ)/¯
-
-# Create a teacher
-teacher = Teacher.new(3, "Biology", 'Martin', age: 42)
-puts teacher.id  # Output: 3
-puts teacher.name  # Output: Martin
-puts teacher.age  # Output: 42
-puts teacher.specialization  # Output: Biology
-puts teacher.can_use_services?  # Output: true
-
-#Create instances of a book
-
-book_1 = Book.new('The Ruby Programming Language', 'Matz')
-book_2 = Book.new('Clean Code', 'Robert C. Martin')
-
-# Create instances of Rental
-rental_1 = Rental.new(Date.new(2023, 1, 1), book_1, student_1)
-rental_2 = Rental.new(Date.new(2023, 2, 1), book_2, person_2)
-
-# Verify the relationships between Book, Rental, and Person
-puts book_1.rentals.inspect
-puts student_1.rentals.inspect
-puts rental_1.book.inspect
-
+ruby main.rb
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
